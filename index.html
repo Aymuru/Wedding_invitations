@@ -130,8 +130,26 @@
     }
 
     @media screen and (max-width: 1199px) {
+      /*
+        Карта подтягивается вверх к блоку с адресом: без поднятия z-index и pointer-events
+        Zero Block перекрывает iframe и «съедает» жесты (масштаб/перетаскивание).
+        Фоновые слои .t396__filter / carrier по умолчанию ловят касания под элементами с pointer-events:none.
+      */
+      #rec664113494 .t396__filter,
+      #rec664113494 .t396__carrier,
+      #rec664113494 .t396__carrier-wrapper {
+        pointer-events: none !important;
+      }
+
       #rec664113495 {
-        margin-top: -750px !important;
+        position: relative;
+        z-index: 10;
+        margin-top: -620px !important;
+      }
+
+      #rec664113495 .t-map-lazyload,
+      #rec664113495 .t-map {
+        touch-action: pan-x pan-y pinch-zoom !important;
       }
 
       /* Details title block (mobile): bigger than before, smaller than desktop */
@@ -147,7 +165,8 @@
       #rec664113494 .t396__artboard,
       #rec664113494 .t396__filter,
       #rec664113494 .t396__carrier {
-        height: 900px !important;
+        /* чуть выше 900px — меньше наезда текста адреса на карту при разной высоте шрифта/строк */
+        height: 980px !important;
       }
 
       #rec664113494 .tn-elem[data-elem-id="1654690769382"] {
@@ -185,7 +204,7 @@
     data-tilda-page-id="41075745" data-tilda-page-alias="wedding-invitations"
     data-tilda-formskey="5bcdf88495d4cdd463cb2b92689f5bd4" data-tilda-lazy="yes" data-tilda-project-lang="RU"
     data-tilda-root-zone="com" data-tilda-project-headcode="yes" data-tilda-project-country="RU">
-    <div id="rec664113494" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"> <!-- T396 -->
+    <div id="rec664113494" class="r t-rec" data-animationappear="off" data-record-type="396"> <!-- T396 -->
       <style>
         #rec664113494 .t396__artboard {
           height: 1620px;
@@ -255,8 +274,6 @@
           #rec664113494 .t396__carrier {
             height: 1810px;
           }
-
-          #rec664113494 .t396__filter {}
 
           #rec664113494 .t396__carrier {
             background-attachment: scroll;
@@ -1950,11 +1967,7 @@
           height: auto;
           pointer-events: none;
           -webkit-filter: blur(2px);
-          : filter:blur(2px);
-          ;
           filter: blur(2px);
-          : filter:blur(2px);
-          ;
           border-radius: 0px 0px 0px 0px;
         }
 
@@ -2492,7 +2505,7 @@
         </div>
       </div>
     </div>
-    <div id="rec717462703" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"> <!-- T396 -->
+    <div id="rec717462703" class="r t-rec" data-animationappear="off" data-record-type="396"> <!-- T396 -->
       <style>
         #rec717462703 .t396__artboard {
           height: 460px;
@@ -2557,8 +2570,6 @@
           #rec717462703 .t396__carrier {
             height: 470px;
           }
-
-          #rec717462703 .t396__filter {}
 
           #rec717462703 .t396__carrier {
             background-attachment: scroll;
@@ -3019,7 +3030,7 @@
       <script>t_onFuncLoad('t396_initialScale', function () { t396_initialScale('717462703'); }); t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('717462703'); }); });</script>
       <!-- /T396 -->
     </div>
-    <div id="rec717462707" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"> <!-- T396 -->
+    <div id="rec717462707" class="r t-rec" data-animationappear="off" data-record-type="396"> <!-- T396 -->
       <style>
         #rec717462707 .t396__artboard {
           height: 570px;
@@ -3084,8 +3095,6 @@
           #rec717462707 .t396__carrier {
             height: 440px;
           }
-
-          #rec717462707 .t396__filter {}
 
           #rec717462707 .t396__carrier {
             background-attachment: scroll;
@@ -3248,11 +3257,7 @@
           height: auto;
           pointer-events: none;
           -webkit-filter: blur(0px);
-          : filter:blur(0px);
-          ;
           filter: blur(0px);
-          : filter:blur(0px);
-          ;
           border-radius: 0px 0px 0px 0px;
         }
 
@@ -3401,7 +3406,7 @@
       <script>t_onFuncLoad('t396_initialScale', function () { t396_initialScale('717462707'); }); t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('717462707'); }); });</script>
       <!-- /T396 -->
     </div>
-    <div id="rec717462709" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"> <!-- T396 -->
+    <div id="rec717462709" class="r t-rec" data-animationappear="off" data-record-type="396"> <!-- T396 -->
       <style>
         #rec717462709 .t396__artboard {
           height: 670px;
@@ -3466,8 +3471,6 @@
           #rec717462709 .t396__carrier {
             height: 510px;
           }
-
-          #rec717462709 .t396__filter {}
 
           #rec717462709 .t396__carrier {
             background-attachment: scroll;
@@ -4409,7 +4412,7 @@
       <script>t_onFuncLoad('t396_initialScale', function () { t396_initialScale('717462709'); }); t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('717462709'); }); });</script>
       <!-- /T396 -->
     </div>
-    <div id="rec717462711" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"> <!-- T396 -->
+    <div id="rec717462711" class="r t-rec" data-animationappear="off" data-record-type="396"> <!-- T396 -->
       <style>
         #rec717462711 .t396__artboard {
           height: 1050px;
@@ -4434,8 +4437,6 @@
           #rec717462711 .t396__carrier {
             height: 940px;
           }
-
-          #rec717462711 .t396__filter {}
 
           #rec717462711 .t396__carrier {
             background-attachment: scroll;
@@ -4865,7 +4866,7 @@
       <script>t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('717462711'); }); });</script>
       <!-- /T396 -->
     </div>
-    <div id="rec1758081831" class="r t-rec" style=" " data-animationappear="off" data-record-type="1093"> <!-- t1093 -->
+    <div id="rec1758081831" class="r t-rec" data-animationappear="off" data-record-type="1093"> <!-- t1093 -->
       <div class="t1093">
         <div class="t-popup " data-anim="fadein" data-anim-timeout="0.3" data-tooltip-hook="#anketa"
           data-popup-rec-ids="rec717462711" role="dialog" aria-modal="true" tabindex="-1">
@@ -4910,7 +4911,7 @@
       </style>
       <script>t_onReady(function () { t_onFuncLoad('t1093__init', function () { t1093__init('1758081831'); }); t_onFuncLoad('t1093__initPopup', function () { t1093__initPopup('1758081831'); }); });</script>
     </div>
-    <div id="rec717421407" class="r t-rec" style=" " data-animationappear="off" data-record-type="131"> <!-- T123 -->
+    <div id="rec717421407" class="r t-rec" data-animationappear="off" data-record-type="131"> <!-- T123 -->
       <div class="t123">
         <div class="t-container_100 ">
           <div class="t-width t-width_100 "> <!-- nominify begin -->
@@ -4921,7 +4922,7 @@
         </div>
       </div>
     </div>
-    <div id="rec664113501" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"> <!-- T396 -->
+    <div id="rec664113501" class="r t-rec" data-animationappear="off" data-record-type="396"> <!-- T396 -->
       <style>
         #rec664113501 .t396__artboard {
           height: 270px;
@@ -4992,8 +4993,6 @@
             height: 440px;
           }
 
-          #rec664113501 .t396__filter {}
-
           #rec664113501 .t396__carrier {
             background-attachment: scroll;
           }
@@ -5006,8 +5005,6 @@
           #rec664113501 .t396__carrier {
             height: 380px;
           }
-
-          #rec664113501 .t396__filter {}
 
           #rec664113501 .t396__carrier {
             background-attachment: scroll;
@@ -5022,8 +5019,6 @@
             height: 370px;
           }
 
-          #rec664113501 .t396__filter {}
-
           #rec664113501 .t396__carrier {
             background-attachment: scroll;
           }
@@ -5036,8 +5031,6 @@
           #rec664113501 .t396__carrier {
             height: 380px;
           }
-
-          #rec664113501 .t396__filter {}
 
           #rec664113501 .t396__carrier {
             background-image: unset;
@@ -5440,7 +5433,7 @@
       <script>t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('664113501'); }); });</script>
       <!-- /T396 -->
     </div>
-    <div id="rec717462964" class="r t-rec" style=" " data-animationappear="off" data-record-type="674"> <!-- T674 -->
+    <div id="rec717462964" class="r t-rec" data-animationappear="off" data-record-type="674"> <!-- T674 -->
       <div class="t674">
         <div class="t674__cover t674__cover_fixed" id="recorddiv717462964" itemscope
           itemtype="http://schema.org/ImageObject">
@@ -5477,7 +5470,7 @@
       </div>
       <script>(function () { var isSafariOnIOS = !!navigator.userAgent.match(/iP(hone|od|ad)/) && navigator.userAgent.match(/WebKit/i) && !navigator.userAgent.match(/CriOS/i) && !navigator.userAgent.match(/FxiOS/i); if (!isSafariOnIOS) return; var recid = 'rec717462964'; var rec = document.getElementById(recid); if (!rec) return; rec.classList.add('safari'); })();</script>
     </div>
-    <div id="rec781832222" class="r t-rec" style=" " data-animationappear="off" data-record-type="875"> <!-- t875 -->
+    <div id="rec781832222" class="r t-rec" data-animationappear="off" data-record-type="875"> <!-- t875 -->
       <script>t_onReady(function () { t_onFuncLoad('t875_init', function () { t875_init('781832222'); }); });</script>
     </div>
   </div> <!--/allrecords--> <!-- Stat --> <!-- Yandex.Metrika counter 61855939 -->
