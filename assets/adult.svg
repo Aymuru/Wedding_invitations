@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #945e5e;
+        stroke: #878688;
+        stroke-width: 1.5px;
+      }
+
+      .cls-2 {
+        font-size: 50px;
+        fill: #e7e4f1;
+        font-family: "Monplesir script";
+      }
+    </style>
+  </defs>
+  <circle id="Эллипс_1" data-name="Эллипс 1" class="cls-1" cx="65" cy="65" r="61"/>
+  <text id="_18_" data-name="18+" class="cls-2" x="39" y="79.5">18+</text>
+</svg>

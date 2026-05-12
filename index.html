@@ -118,14 +118,44 @@
         text-align: center;
       }
 
-      /* Details title block (desktop only): force larger size */
+      /*
+        Details + adult (десктоп), блок #rec717462707 → style#euphoria-rec664113494-overrides
+        adult лежит ПОВЕРХ Details (z-index), может заезжать на прозрачные поля WebP.
+
+        Горизонталь:
+          --euphoria-adult-right   — отступ от ПРАВОГО края контейнера (меньше → стикер левее).
+          --euphoria-adult-shift-x — доп. сдвиг translateX (отрицательное → ещё левее, наезжает на картинку).
+
+        Вертикаль остаётся по центру строки; при необходимости добавьте в .euphoria-details-adult:
+          --euphoria-adult-top-nudge: 0px;
+        и в правилах adult: top: calc(50% + var(--euphoria-adult-top-nudge));
+      */
       #rec717462707 .tn-elem[data-elem-id="1705512112176"] {
-        width: 280px !important;
-        left: calc(50% - 600px + 460px) !important;
+        width: 332px !important;
+        left: calc(50% - 600px + 434px) !important;
       }
 
-      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .tn-atom__img {
-        width: 100% !important;
+      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult {
+        --euphoria-adult-right: 0px;
+        --euphoria-adult-shift-x: 10px;
+      }
+
+      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult__details .tn-atom__img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult .tn-atom__img--adult {
+        position: absolute !important;
+        z-index: 2 !important;
+        top: 50% !important;
+        right: var(--euphoria-adult-right) !important;
+        left: auto !important;
+        transform: translate(var(--euphoria-adult-shift-x, 0px), -50%) !important;
+        width: 48px !important;
+        height: auto !important;
+        flex-shrink: 0;
       }
     }
 
@@ -152,14 +182,37 @@
         touch-action: pan-x pan-y pinch-zoom !important;
       }
 
-      /* Details title block (mobile): bigger than before, smaller than desktop */
+      /*
+        adult на мобилке: те же ручки, что на десктопе (правьте числа ниже):
+          --euphoria-adult-right   — меньше → стикер левее; больше → правее
+          --euphoria-adult-shift-x — отрицательное → ещё левее (сильнее наезд на Details)
+      */
       #rec717462707 .tn-elem[data-elem-id="1705512112176"] {
-        width: 190px !important;
-        left: calc(50% - 160px + 65px) !important;
+        width: 238px !important;
+        left: calc(50% - 160px + 41px) !important;
       }
 
-      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .tn-atom__img {
-        width: 100% !important;
+      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult {
+        --euphoria-adult-right: 0px;
+        --euphoria-adult-shift-x: 10px;
+      }
+
+      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult__details .tn-atom__img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult .tn-atom__img--adult {
+        position: absolute !important;
+        z-index: 2 !important;
+        top: 50% !important;
+        right: var(--euphoria-adult-right) !important;
+        left: auto !important;
+        transform: translate(var(--euphoria-adult-shift-x, 0px), -50%) !important;
+        width: 36px !important;
+        height: auto !important;
+        flex-shrink: 0;
       }
 
       #rec664113494 .t396__artboard,
@@ -2265,7 +2318,7 @@
             data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-textfit-value="autoheight"
             data-field-fontsize-value="20" data-field-top-res-320-value="472" data-field-left-res-320-value="230"
             data-field-width-res-320-value="69" data-field-fontsize-res-320-value="15">
-            <div class='tn-atom' field='tn_text_1654518222623'>18:00</div>
+            <div class='tn-atom' field='tn_text_1654518222623'>15:30</div>
           </div>
           <div class='t396__elem tn-elem tn-elem__6641134941654518955924' data-elem-id='1654518955924'
             data-elem-type='shape' data-field-top-value="666" data-field-left-value="499" data-field-height-value="40"
@@ -2441,7 +2494,7 @@
               Московская область,
               <br>
               Благовещенка, ул. Весенняя, 9
-              <br> <span style="color: rgb(216, 167, 75);">18:00</span>
+              <br> <span style="color: rgb(216, 167, 75);">15:30</span>
             </div>
           </div>
           <div class='t396__elem tn-elem tn-elem__6641134941654691198352' data-elem-id='1654691198352'
@@ -2568,7 +2621,7 @@
           #rec717462703 .t396__artboard,
           #rec717462703 .t396__filter,
           #rec717462703 .t396__carrier {
-            height: 470px;
+            height: 500px;
           }
 
           #rec717462703 .t396__carrier {
@@ -2760,7 +2813,7 @@
 
         #rec717462703 .tn-elem[data-elem-id="1705512112183"] {
           z-index: 3;
-          top: 222px;
+          top: 246px;
           ;
           left: calc(50% - 600px + 277px);
           ;
@@ -2786,7 +2839,7 @@
         @media screen and (max-width:1199px) {
           #rec717462703 .tn-elem[data-elem-id="1705512112183"] {
             display: table;
-            top: 191px;
+            top: 247px;
             ;
             left: calc(50% - 160px + 32px);
             ;
@@ -2797,7 +2850,7 @@
 
         #rec717462703 .tn-elem[data-elem-id="1705512112185"] {
           z-index: 3;
-          top: 249px;
+          top: 273px;
           ;
           left: calc(50% - 600px + 452px);
           ;
@@ -2823,7 +2876,7 @@
         @media screen and (max-width:1199px) {
           #rec717462703 .tn-elem[data-elem-id="1705512112185"] {
             display: table;
-            top: 191px;
+            top: 247px;
             ;
             left: calc(50% - 160px + 174px);
             ;
@@ -2834,7 +2887,7 @@
 
         #rec717462703 .tn-elem[data-elem-id="1705512112186"] {
           z-index: 3;
-          top: 249px;
+          top: 273px;
           ;
           left: calc(50% - 600px + 612px);
           ;
@@ -2860,7 +2913,7 @@
         @media screen and (max-width:1199px) {
           #rec717462703 .tn-elem[data-elem-id="1705512112186"] {
             display: table;
-            top: 312px;
+            top: 368px;
             ;
             left: calc(50% - 160px + 31px);
             ;
@@ -2871,7 +2924,7 @@
 
         #rec717462703 .tn-elem[data-elem-id="1705512112188"] {
           z-index: 3;
-          top: 222px;
+          top: 246px;
           ;
           left: calc(50% - 600px + 772px);
           ;
@@ -2897,7 +2950,7 @@
         @media screen and (max-width:1199px) {
           #rec717462703 .tn-elem[data-elem-id="1705512112188"] {
             display: table;
-            top: 312px;
+            top: 368px;
             ;
             left: calc(50% - 160px + 173px);
             ;
@@ -2909,7 +2962,7 @@
       <div class='t396'>
         <div class="t396__artboard" data-artboard-recid="717462703" data-artboard-screens="320,1200"
           data-artboard-height="460" data-artboard-valign="center" data-artboard-upscale="window"
-          data-artboard-height-res-320="470">
+          data-artboard-height-res-320="500">
           <div class="t396__carrier-wrapper">
             <div class="t396__carrier" data-artboard-recid="717462703"></div>
           </div>
@@ -2967,62 +3020,62 @@
             data-field-left-res-320-value="11" data-field-width-res-320-value="299"
             data-field-fontsize-res-320-value="14">
             <div class='tn-atom' field='tn_text_1705512112180'>Нам будет очень приятно, если в своих нарядах Вы
-              поддержите цветовую гамму нашей свадьбы: <br><br></div>
+              поддержите цветовую гамму нашей свадьбы&nbsp;—&nbsp;нежные пастельные тона, например:</div>
           </div>
           <div class='t396__elem tn-elem tn-elem__7174627031705512112183 t-animate' data-elem-id='1705512112183'
-            data-elem-type='image' data-field-top-value="222" data-field-left-value="277" data-field-height-value="156"
+            data-elem-type='image' data-field-top-value="246" data-field-left-value="277" data-field-height-value="156"
             data-field-width-value="150" data-field-axisy-value="top" data-field-axisx-value="left"
             data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
             data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup"
             data-animate-duration="3" data-animate-distance="100" data-animate-mobile="y"
             data-field-filewidth-value="663" data-field-fileheight-value="688" data-field-heightmode-value="hug"
-            data-field-top-res-320-value="191" data-field-left-res-320-value="32" data-field-height-res-320-value="120"
+            data-field-top-res-320-value="247" data-field-left-res-320-value="32" data-field-height-res-320-value="120"
             data-field-width-res-320-value="116">
             <div class='tn-atom'> <img class='tn-atom__img t-img'
-                data-original='https://static.tildacdn.com/tild3739-3765-4537-a439-343132653064/Group_28_45.svg'
-                src='https://static.tildacdn.com/tild3739-3765-4537-a439-343132653064/Group_28_45.svg' alt=''
+                data-original='assets/color-1.svg'
+                src='assets/color-1.svg' alt=''
                 imgfield='tn_img_1705512112183' /> </div>
           </div>
           <div class='t396__elem tn-elem tn-elem__7174627031705512112185 t-animate' data-elem-id='1705512112185'
-            data-elem-type='image' data-field-top-value="249" data-field-left-value="452" data-field-height-value="156"
+            data-elem-type='image' data-field-top-value="273" data-field-left-value="452" data-field-height-value="156"
             data-field-width-value="150" data-field-axisy-value="top" data-field-axisx-value="left"
             data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
             data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup"
             data-animate-duration="3" data-animate-delay="0.2" data-animate-distance="100" data-animate-mobile="y"
             data-field-filewidth-value="663" data-field-fileheight-value="688" data-field-heightmode-value="hug"
-            data-field-top-res-320-value="191" data-field-left-res-320-value="174" data-field-height-res-320-value="120"
+            data-field-top-res-320-value="247" data-field-left-res-320-value="174" data-field-height-res-320-value="120"
             data-field-width-res-320-value="116">
             <div class='tn-atom'> <img class='tn-atom__img t-img'
-                data-original='https://static.tildacdn.com/tild3762-6530-4537-b236-616332396330/Group_28_46.svg'
-                src='https://static.tildacdn.com/tild3762-6530-4537-b236-616332396330/Group_28_46.svg' alt=''
+                data-original='assets/color-2.svg'
+                src='assets/color-2.svg' alt=''
                 imgfield='tn_img_1705512112185' /> </div>
           </div>
           <div class='t396__elem tn-elem tn-elem__7174627031705512112186 t-animate' data-elem-id='1705512112186'
-            data-elem-type='image' data-field-top-value="249" data-field-left-value="612" data-field-height-value="156"
+            data-elem-type='image' data-field-top-value="273" data-field-left-value="612" data-field-height-value="156"
             data-field-width-value="150" data-field-axisy-value="top" data-field-axisx-value="left"
             data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
             data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup"
             data-animate-duration="3" data-animate-delay="0.4" data-animate-distance="100" data-animate-mobile="y"
             data-field-filewidth-value="663" data-field-fileheight-value="688" data-field-heightmode-value="hug"
-            data-field-top-res-320-value="312" data-field-left-res-320-value="31" data-field-height-res-320-value="120"
+            data-field-top-res-320-value="368" data-field-left-res-320-value="31" data-field-height-res-320-value="120"
             data-field-width-res-320-value="116">
             <div class='tn-atom'> <img class='tn-atom__img t-img'
-                data-original='https://static.tildacdn.com/tild3463-3466-4036-b366-396463373536/Group_28_47.svg'
-                src='https://static.tildacdn.com/tild3463-3466-4036-b366-396463373536/Group_28_47.svg' alt=''
+                data-original='assets/color-3.svg'
+                src='assets/color-3.svg' alt=''
                 imgfield='tn_img_1705512112186' /> </div>
           </div>
           <div class='t396__elem tn-elem tn-elem__7174627031705512112188 t-animate' data-elem-id='1705512112188'
-            data-elem-type='image' data-field-top-value="222" data-field-left-value="772" data-field-height-value="156"
+            data-elem-type='image' data-field-top-value="246" data-field-left-value="772" data-field-height-value="156"
             data-field-width-value="150" data-field-axisy-value="top" data-field-axisx-value="left"
             data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
             data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup"
             data-animate-duration="3" data-animate-delay="0.6" data-animate-distance="100" data-animate-mobile="y"
             data-field-filewidth-value="663" data-field-fileheight-value="688" data-field-heightmode-value="hug"
-            data-field-top-res-320-value="312" data-field-left-res-320-value="173" data-field-height-res-320-value="120"
+            data-field-top-res-320-value="368" data-field-left-res-320-value="173" data-field-height-res-320-value="120"
             data-field-width-res-320-value="116">
             <div class='tn-atom'> <img class='tn-atom__img t-img'
-                data-original='https://static.tildacdn.com/tild3435-6363-4562-b833-656639383335/Group_28_48.svg'
-                src='https://static.tildacdn.com/tild3435-6363-4562-b833-656639383335/Group_28_48.svg' alt=''
+                data-original='assets/color-4.svg'
+                src='assets/color-4.svg' alt=''
                 imgfield='tn_img_1705512112188' /> </div>
           </div>
         </div>
@@ -3167,9 +3220,9 @@
           z-index: 3;
           top: 74px;
           ;
-          left: calc(50% - 600px + 485px);
+          left: calc(50% - 600px + 434px);
           ;
-          width: 230px;
+          width: 332px;
           height: auto;
           pointer-events: none;
         }
@@ -3188,14 +3241,57 @@
           object-position: center center;
         }
 
+        #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult {
+          position: relative;
+          width: 100%;
+          --euphoria-adult-right: 0px;
+          --euphoria-adult-shift-x: 10px;
+        }
+
+        #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult__details {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          box-sizing: border-box;
+          padding-right: 0;
+          position: relative;
+          z-index: 1;
+        }
+
+        #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult__details .tn-atom__img {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+        }
+
+        #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult .tn-atom__img--adult {
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          right: var(--euphoria-adult-right);
+          transform: translate(var(--euphoria-adult-shift-x, 0px), -50%);
+          width: 48px;
+          height: auto;
+        }
+
         @media screen and (max-width:1199px) {
+          #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult {
+            --euphoria-adult-right: 0px;
+            --euphoria-adult-shift-x: 8px;
+          }
+
+          #rec717462707 .tn-elem[data-elem-id="1705512112176"] .euphoria-details-adult .tn-atom__img--adult {
+            width: 36px;
+          }
+
           #rec717462707 .tn-elem[data-elem-id="1705512112176"] {
             display: table;
             top: 58px;
             ;
-            left: calc(50% - 160px + 85px);
+            left: calc(50% - 160px + 41px);
             ;
-            width: 150px;
+            width: 238px;
             height: auto;
           }
         }
@@ -3350,17 +3446,20 @@
           </div>
           <div class="t396__filter" data-artboard-recid="717462707"></div>
           <div class='t396__elem tn-elem tn-elem__7174627071705512112176 t-animate' data-elem-id='1705512112176'
-            data-elem-type='image' data-field-top-value="74" data-field-left-value="524" data-field-height-value="48"
-            data-field-width-value="152" data-field-axisy-value="top" data-field-axisx-value="left"
+            data-elem-type='image' data-field-top-value="74" data-field-left-value="434" data-field-height-value="48"
+            data-field-width-value="332" data-field-axisy-value="top" data-field-axisx-value="left"
             data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
             data-field-heightunits-value="px" data-field-widthunits-value="px" data-animate-style="fadeinup"
             data-animate-duration="1" data-animate-distance="100" data-animate-mobile="y"
             data-field-filewidth-value="169" data-field-fileheight-value="53" data-field-heightmode-value="hug"
-            data-field-top-res-320-value="58" data-field-left-res-320-value="99" data-field-height-res-320-value="39"
-            data-field-width-res-320-value="123">
-            <div class='tn-atom'> <img class='tn-atom__img t-img'
+            data-field-top-res-320-value="58" data-field-left-res-320-value="41" data-field-height-res-320-value="39"
+            data-field-width-res-320-value="238">
+            <div class='tn-atom euphoria-details-adult'><div class='euphoria-details-adult__details'><img
+                class='tn-atom__img t-img'
                 data-original='https://static.tildacdn.com/tild3737-3761-4537-a461-333263306561/_4.svg'
-                src='assets/Details.webp' alt='' imgfield='tn_img_1705512112176' /> </div>
+                src='assets/Details.webp' alt='' imgfield='tn_img_1705512112176' /></div><img
+                class='tn-atom__img tn-atom__img--adult t-img' data-original='assets/adult.svg'
+                src='assets/adult.svg' alt='18+' imgfield='tn_img_176812000001' /></div>
           </div>
           <div class='t396__elem tn-elem tn-elem__7174627071705512112180 t-animate' data-elem-id='1705512112180'
             data-elem-type='text' data-field-top-value="152" data-field-left-value="376" data-field-height-value="279"
@@ -3371,9 +3470,7 @@
             data-field-textfit-value="autoheight" data-field-fontsize-value="20" data-field-top-res-320-value="117"
             data-field-left-res-320-value="21" data-field-height-res-320-value="220"
             data-field-width-res-320-value="279" data-field-fontsize-res-320-value="14">
-            <div class='tn-atom' field='tn_text_1705512112180'><br>Приносите с&nbsp;собой веселье и&nbsp;радость
-              в&nbsp;душе, а&nbsp;подарки&nbsp;— в&nbsp;конверте!<br><br>Очень просим Вас не&nbsp;покупать букеты
-              цветов, так как забрать цветы домой для нас очень проблематично.<br></div>
+            <div class='tn-atom' field='tn_text_1705512112180'><br>Дорогие&nbsp;гости!<br><br>Для нашего мероприятия действует возрастное ограничение <b>18+</b>.<br>Мы просим вас оставить малышей дома и разделить этот взрослый праздник с нами.</div>
           </div>
           <div class='t396__elem tn-elem tn-elem__7174627071767533769458000001' data-elem-id='1767533769458000001'
             data-elem-type='image' data-field-top-value="13" data-field-left-value="-309" data-field-height-value="532"
@@ -4915,8 +5012,8 @@
       <div class="t123">
         <div class="t-container_100 ">
           <div class="t-width t-width_100 "> <!-- nominify begin -->
-            <!--!ANNEXX!--><!--!ANX815-1!--><!--![{"id":"","data":""},{"id":"anxcommentblock","data":""},{"id":"date-time","data":"2026-08-04 18:00"},{"id":"tz","data":"minus3"},{"id":"days","data":".tn-elem__7174627091685034886327"},{"id":"nullhour","data":"true"},{"id":"hours","data":".tn-elem__7174627091685034886344"},{"id":"minutes","data":".tn-elem__7174627091685034886346"},{"id":"seconds","data":".tn-elem__7174627091685034886349"},{"id":"adddaystohours","data":"true"},{"id":"days_text","data":".tn-elem__7174627091685034886330"},{"id":"days_1","data":"день"},{"id":"days_2","data":"дня"},{"id":"days_5","data":"дней"},{"id":"hours_text","data":".tn-elem__7174627091685034886334"},{"id":"hours_1","data":"час"},{"id":"hours_2","data":"часа"},{"id":"hours_5","data":"часов"},{"id":"minutes_text","data":".tn-elem__7174627091685034886338"},{"id":"minutes_1","data":"минута"},{"id":"minutes_2","data":"минуты"},{"id":"minutes_5","data":"минут"},{"id":"seconds_text","data":".tn-elem__7174627091685034886341"},{"id":"seconds_1","data":"секунда"},{"id":"seconds_2","data":"секунды"},{"id":"seconds_5","data":"секунд"}]!-->
-            <script> (function () { let generateSelectors = () => { return ".tn-elem__7174627091685034886327, .tn-elem__7174627091685034886330, .tn-elem__7174627091685034886344, .tn-elem__7174627091685034886334, .tn-elem__7174627091685034886346, .tn-elem__7174627091685034886338, .tn-elem__7174627091685034886349, .tn-elem__7174627091685034886341".replace(/s/g, "").split(/,s|,/).filter(e => e).join(","); }; document.head.insertAdjacentHTML('beforeend', `<style class="anx-815-opacity">${generateSelectors()} { opacity: 0; pointer-events: none;}</style>`); document.addEventListener('DOMContentLoaded', () => { setTimeout(() => { let daysElement = '.tn-elem__7174627091685034886327' && document.querySelectorAll('.tn-elem__7174627091685034886327'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), daysTextElement = '.tn-elem__7174627091685034886330' && document.querySelectorAll('.tn-elem__7174627091685034886330'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), daysText1 = 'день' || 'день', daysText2 = 'дня' || 'дня', daysText5 = 'дней' || 'дней', hoursElement = '.tn-elem__7174627091685034886344' && document.querySelectorAll('.tn-elem__7174627091685034886344'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), hoursTextElement = '.tn-elem__7174627091685034886334' && document.querySelectorAll('.tn-elem__7174627091685034886334'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), hoursText1 = 'час' || 'час', hoursText2 = 'часа' || 'часа', hoursText5 = 'часов' || 'часов', minutesElement = '.tn-elem__7174627091685034886346' && document.querySelectorAll('.tn-elem__7174627091685034886346'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), minutesTextElement = '.tn-elem__7174627091685034886338' && document.querySelectorAll('.tn-elem__7174627091685034886338'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), minutesText1 = 'минута' || 'минута', minutesText2 = 'минуты' || 'минуты', minutesText5 = 'минут' || 'минут', secondsElement = '.tn-elem__7174627091685034886349' && document.querySelectorAll('.tn-elem__7174627091685034886349'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), secondsTextElement = '.tn-elem__7174627091685034886341' && document.querySelectorAll('.tn-elem__7174627091685034886341'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), secondsText1 = 'секунда' || 'секунда', secondsText2 = 'секунды' || 'секунды', secondsText5 = 'секунд' || 'секунд', date = new Date(('2026-08-04 18:00').replace(/-/g, '/')), tz = (() => { let tz = "minus3"; return /plus/.test(tz) ? +tz.replace('plus', '+') : +tz.replace('minus', '-'); })(), tzScript = (date.getTimezoneOffset() / 60) - tz, diffTZ = tzScript <= 0, offsetTZUser = diffTZ ? -tzScript : tzScript, rend = false; const declOfNum = (number, words) => { return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]]; }; const nullTime = () => { return diffTZ ? (Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000 > 0 : (Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000 > 0; }; const timer = () => { let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000), days = Math.floor(timeLeft / 86400), hours = Math.floor((timeLeft - (daysElement ? (days * 86400) : !daysElement && !true ? (days * 86400) : 0)) / 3600), minutes = Math.floor((timeLeft - (daysElement ? (days * 86400) : !daysElement && !true ? (days * 86400) : 0) - (hoursElement ? hours * 3600 : !daysElement && !true ? hours * 3600 : 0)) / 60), seconds = Math.floor(timeLeft - (daysElement ? (days * 86400) : !daysElement && !true ? (days * 86400) : 0) - (hoursElement ? hours * 3600 : !daysElement && !true ? hours * 3600 : 0) - (minutesElement ? minutes * 60 : !daysElement && !true ? minutes * 60 : 0)), hoursB = hours, minutesB = minutes, secondsB = seconds; if (true && days < 10) days = `0${days}`; if (hours < 10) hours = `0${hours}`; if (minutes < 10) minutes = `0${minutes}`; if (seconds < 10) seconds = `0${seconds}`; if (!nullTime()) { days = hours = minutes = seconds = hoursB = minutesB = secondsB = 0; } if (daysElement) daysElement.forEach(e => e.textContent = days); if (daysTextElement) daysTextElement.forEach(e => e.textContent = declOfNum(days, [daysText1, daysText2, daysText5])); if (hoursElement) hoursElement.forEach(e => e.textContent = hours); if (hoursTextElement) hoursTextElement.forEach(e => e.textContent = declOfNum(hoursB, [hoursText1, hoursText2, hoursText5])); if (minutesElement) minutesElement.forEach(e => e.textContent = minutes); if (minutesTextElement) minutesTextElement.forEach(e => e.textContent = declOfNum(minutesB, [minutesText1, minutesText2, minutesText5])); if (secondsElement) secondsElement.forEach(e => e.textContent = seconds); if (secondsTextElement) secondsTextElement.forEach(e => e.textContent = declOfNum(secondsB, [secondsText1, secondsText2, secondsText5])); if (!rend) { rend = true; document.querySelectorAll(".anx-815-opacity").forEach(e => e.remove()); } }; if (nullTime()) { setInterval(timer, 1000); timer(); } else { if (daysElement) daysElement.forEach(e => e.textContent = 0); if (hoursElement) hoursElement.forEach(e => e.textContent = 0); if (minutesElement) minutesElement.forEach(e => e.textContent = 0); if (secondsElement) secondsElement.forEach(e => e.textContent = 0); if (daysTextElement) daysTextElement.forEach(e => e.textContent = declOfNum(0, [daysText1, daysText2, daysText5])); if (hoursTextElement) hoursTextElement.forEach(e => e.textContent = declOfNum(0, [hoursText1, hoursText2, hoursText5])); if (minutesTextElement) minutesTextElement.forEach(e => e.textContent = declOfNum(0, [minutesText1, minutesText2, minutesText5])); if (secondsTextElement) secondsTextElement.forEach(e => e.textContent = declOfNum(0, [secondsText1, secondsText2, secondsText5])); document.querySelectorAll(".anx-815-opacity").forEach(e => e.remove()); } window.dispatchEvent(new CustomEvent('resize')); }, 500); }); }());</script>
+            <!--!ANNEXX!--><!--!ANX815-1!--><!--![{"id":"","data":""},{"id":"anxcommentblock","data":""},{"id":"date-time","data":"2026-08-04 15:30"},{"id":"tz","data":"minus3"},{"id":"days","data":".tn-elem__7174627091685034886327"},{"id":"nullhour","data":"true"},{"id":"hours","data":".tn-elem__7174627091685034886344"},{"id":"minutes","data":".tn-elem__7174627091685034886346"},{"id":"seconds","data":".tn-elem__7174627091685034886349"},{"id":"adddaystohours","data":"true"},{"id":"days_text","data":".tn-elem__7174627091685034886330"},{"id":"days_1","data":"день"},{"id":"days_2","data":"дня"},{"id":"days_5","data":"дней"},{"id":"hours_text","data":".tn-elem__7174627091685034886334"},{"id":"hours_1","data":"час"},{"id":"hours_2","data":"часа"},{"id":"hours_5","data":"часов"},{"id":"minutes_text","data":".tn-elem__7174627091685034886338"},{"id":"minutes_1","data":"минута"},{"id":"minutes_2","data":"минуты"},{"id":"minutes_5","data":"минут"},{"id":"seconds_text","data":".tn-elem__7174627091685034886341"},{"id":"seconds_1","data":"секунда"},{"id":"seconds_2","data":"секунды"},{"id":"seconds_5","data":"секунд"}]!-->
+            <script> (function () { let generateSelectors = () => { return ".tn-elem__7174627091685034886327, .tn-elem__7174627091685034886330, .tn-elem__7174627091685034886344, .tn-elem__7174627091685034886334, .tn-elem__7174627091685034886346, .tn-elem__7174627091685034886338, .tn-elem__7174627091685034886349, .tn-elem__7174627091685034886341".replace(/s/g, "").split(/,s|,/).filter(e => e).join(","); }; document.head.insertAdjacentHTML('beforeend', `<style class="anx-815-opacity">${generateSelectors()} { opacity: 0; pointer-events: none;}</style>`); document.addEventListener('DOMContentLoaded', () => { setTimeout(() => { let daysElement = '.tn-elem__7174627091685034886327' && document.querySelectorAll('.tn-elem__7174627091685034886327'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), daysTextElement = '.tn-elem__7174627091685034886330' && document.querySelectorAll('.tn-elem__7174627091685034886330'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), daysText1 = 'день' || 'день', daysText2 = 'дня' || 'дня', daysText5 = 'дней' || 'дней', hoursElement = '.tn-elem__7174627091685034886344' && document.querySelectorAll('.tn-elem__7174627091685034886344'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), hoursTextElement = '.tn-elem__7174627091685034886334' && document.querySelectorAll('.tn-elem__7174627091685034886334'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), hoursText1 = 'час' || 'час', hoursText2 = 'часа' || 'часа', hoursText5 = 'часов' || 'часов', minutesElement = '.tn-elem__7174627091685034886346' && document.querySelectorAll('.tn-elem__7174627091685034886346'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), minutesTextElement = '.tn-elem__7174627091685034886338' && document.querySelectorAll('.tn-elem__7174627091685034886338'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), minutesText1 = 'минута' || 'минута', minutesText2 = 'минуты' || 'минуты', minutesText5 = 'минут' || 'минут', secondsElement = '.tn-elem__7174627091685034886349' && document.querySelectorAll('.tn-elem__7174627091685034886349'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), secondsTextElement = '.tn-elem__7174627091685034886341' && document.querySelectorAll('.tn-elem__7174627091685034886341'.split(',').map(e => e.trim() + ' .tn-atom').join(',')), secondsText1 = 'секунда' || 'секунда', secondsText2 = 'секунды' || 'секунды', secondsText5 = 'секунд' || 'секунд', date = new Date(('2026-08-04 15:30').replace(/-/g, '/')), tz = (() => { let tz = "minus3"; return /plus/.test(tz) ? +tz.replace('plus', '+') : +tz.replace('minus', '-'); })(), tzScript = (date.getTimezoneOffset() / 60) - tz, diffTZ = tzScript <= 0, offsetTZUser = diffTZ ? -tzScript : tzScript, rend = false; const declOfNum = (number, words) => { return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]]; }; const nullTime = () => { return diffTZ ? (Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000 > 0 : (Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000 > 0; }; const timer = () => { let timeLeft = diffTZ ? parseInt((Date.parse(date) - (Date.now() - offsetTZUser * 60 * 60 * 1000)) / 1000) : parseInt((Date.parse(date) - (Date.now() + offsetTZUser * 60 * 60 * 1000)) / 1000), days = Math.floor(timeLeft / 86400), hours = Math.floor((timeLeft - (daysElement ? (days * 86400) : !daysElement && !true ? (days * 86400) : 0)) / 3600), minutes = Math.floor((timeLeft - (daysElement ? (days * 86400) : !daysElement && !true ? (days * 86400) : 0) - (hoursElement ? hours * 3600 : !daysElement && !true ? hours * 3600 : 0)) / 60), seconds = Math.floor(timeLeft - (daysElement ? (days * 86400) : !daysElement && !true ? (days * 86400) : 0) - (hoursElement ? hours * 3600 : !daysElement && !true ? hours * 3600 : 0) - (minutesElement ? minutes * 60 : !daysElement && !true ? minutes * 60 : 0)), hoursB = hours, minutesB = minutes, secondsB = seconds; if (true && days < 10) days = `0${days}`; if (hours < 10) hours = `0${hours}`; if (minutes < 10) minutes = `0${minutes}`; if (seconds < 10) seconds = `0${seconds}`; if (!nullTime()) { days = hours = minutes = seconds = hoursB = minutesB = secondsB = 0; } if (daysElement) daysElement.forEach(e => e.textContent = days); if (daysTextElement) daysTextElement.forEach(e => e.textContent = declOfNum(days, [daysText1, daysText2, daysText5])); if (hoursElement) hoursElement.forEach(e => e.textContent = hours); if (hoursTextElement) hoursTextElement.forEach(e => e.textContent = declOfNum(hoursB, [hoursText1, hoursText2, hoursText5])); if (minutesElement) minutesElement.forEach(e => e.textContent = minutes); if (minutesTextElement) minutesTextElement.forEach(e => e.textContent = declOfNum(minutesB, [minutesText1, minutesText2, minutesText5])); if (secondsElement) secondsElement.forEach(e => e.textContent = seconds); if (secondsTextElement) secondsTextElement.forEach(e => e.textContent = declOfNum(secondsB, [secondsText1, secondsText2, secondsText5])); if (!rend) { rend = true; document.querySelectorAll(".anx-815-opacity").forEach(e => e.remove()); } }; if (nullTime()) { setInterval(timer, 1000); timer(); } else { if (daysElement) daysElement.forEach(e => e.textContent = 0); if (hoursElement) hoursElement.forEach(e => e.textContent = 0); if (minutesElement) minutesElement.forEach(e => e.textContent = 0); if (secondsElement) secondsElement.forEach(e => e.textContent = 0); if (daysTextElement) daysTextElement.forEach(e => e.textContent = declOfNum(0, [daysText1, daysText2, daysText5])); if (hoursTextElement) hoursTextElement.forEach(e => e.textContent = declOfNum(0, [hoursText1, hoursText2, hoursText5])); if (minutesTextElement) minutesTextElement.forEach(e => e.textContent = declOfNum(0, [minutesText1, minutesText2, minutesText5])); if (secondsTextElement) secondsTextElement.forEach(e => e.textContent = declOfNum(0, [secondsText1, secondsText2, secondsText5])); document.querySelectorAll(".anx-815-opacity").forEach(e => e.remove()); } window.dispatchEvent(new CustomEvent('resize')); }, 500); }); }());</script>
             <!-- nominify end -->
           </div>
         </div>
@@ -5484,7 +5581,9 @@
       setTimeout(function () { (function (d, w, k, o, g) { var n = d.getElementsByTagName(o)[0], s = d.createElement(o), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.key = k; s.id = "tildastatscript"; s.src = g; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, '47aef9f568a6b270f391e7f34c79e2e7', 'script', 'https://static.tildacdn.com/js/tilda-stat-1.0.min.js'); }, 2000);</script>
   <script>
     (function () {
-      var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwjjDY5_VJakN3HTM4cNVzvInzfFTRHr4MqCXxKhS2Av3d_IvzDK4rzY-GorEU1d1vrWQ/exec';
+      var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzla5xZqucIEBtSpnH3RAp-3HkkUSHFh1yjzTwP-uys0sWotvzz8cUEcqTcRjevBhMB8w/exec';
+
+      /* Google Sheet: эталон doPost — scripts/anketa-google-apps-script.gs. Развёртывание: выполнять от «Я», доступ «Все». */
 
       function isAnketaForm(form) {
         if (!form) return false;
@@ -5559,18 +5658,36 @@
 
       function postToSheet(payload) {
         var body = JSON.stringify(payload);
-        // sendBeacon is fire-and-forget and doesn't hang in pending like some fetch/no-cors flows
-        if (navigator.sendBeacon) {
-          var blob = new Blob([body], { type: 'text/plain;charset=UTF-8' });
-          var ok = navigator.sendBeacon(GOOGLE_SCRIPT_URL, blob);
-          return ok ? Promise.resolve() : Promise.reject(new Error('sendBeacon failed'));
-        }
+        var headers = { 'Content-Type': 'text/plain;charset=utf-8' };
+        // text/plain — «простой» тип для no-cors; тело всё равно JSON для JSON.parse на стороне GAS
         return fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
-          mode: 'no-cors',
-          keepalive: true,
+          mode: 'cors',
+          credentials: 'omit',
+          headers: headers,
           body: body
-        }).then(function () { return; });
+        })
+          .then(function (res) {
+            return res.text().then(function (text) {
+              if (!text) return;
+              try {
+                var j = JSON.parse(text);
+                if (j && j.success === false) {
+                  return Promise.reject(new Error(j.error || 'Google Script: success false'));
+                }
+              } catch (ignore) { /* не JSON — игнорируем */ }
+            });
+          })
+          .catch(function () {
+            return fetch(GOOGLE_SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              credentials: 'omit',
+              headers: headers,
+              keepalive: true,
+              body: body
+            });
+          });
       }
 
       function submitAnketaForm(form) {
@@ -5671,6 +5788,7 @@
             var recId = rec ? rec.id : '';
             if (recId === 'rec717462707') forceImg(img, 'assets/Details.webp');
           }
+          if (imgfield === 'tn_img_176812000001') forceImg(img, 'assets/adult.svg');
         }
       }
 
